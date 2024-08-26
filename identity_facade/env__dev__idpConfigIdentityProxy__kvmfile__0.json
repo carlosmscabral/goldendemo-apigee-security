@@ -1,0 +1,53 @@
+{
+  "keyValueEntries": [
+    {
+      "name": "idp.token.hostname",
+      "value": "keycloak.35.190.9.46.nip.io"
+    },
+    {
+      "name": "idp.token.uri",
+      "value": "realms/cabral-idp/protocol/openid-connect/token"
+    },
+    {
+      "name": "idp.apigee.client_id",
+      "value": "apigee-keycloak"
+    },
+    {
+      "name": "idp.jwks.uri",
+      "value": "realms/cabral-idp/protocol/openid-connect/certs"
+    },
+    {
+      "name": "idp.jwks.hostname",
+      "value": "keycloak.35.190.9.46.nip.io"
+    },
+    {
+      "name": "idp.issuer",
+      "value": "https://keycloak.35.190.9.46.nip.io/realms/cabral-idp"
+    },
+    {
+      "name": "idp.apigee.redirect_uri",
+      "value": "https://dev.35.227.240.213.nip.io/v1/oauth20/callback"
+    },
+    {
+      "name": "idp.az.hostname",
+      "value": "keycloak.35.190.9.46.nip.io"
+    },
+    {
+      "name": "idp.userinfo.hostname",
+      "value": "keycloak.35.190.9.46.nip.io"
+    },
+    {
+      "name": "idp.az.uri",
+      "value": "realms/cabral-idp/protocol/openid-connect/auth"
+    },
+    {
+      "name": "idp.userinfo.uri",
+      "value": "realms/cabral-idp/protocol/openid-connect/userinfo"
+    },
+    {
+      "name": "idp.apigee.client_secret",
+      "value": "aop5qL0sgkMxpu2UIAc7JuojcZPCItet"
+    }
+  ],
+  "nextPageToken": ""
+}
