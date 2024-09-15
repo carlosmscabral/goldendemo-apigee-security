@@ -45,3 +45,4 @@ cd ./devrel/references/identity-facade/
 # ...
 
 # We can simply change the file and import it back!
+# apigeecli kvms entries import -e dev -m idpConfigIdentityProxy -o cabral-apigee -t $(gcloud auth print-access-token) -f ./env__dev__idpConfigIdentityProxy__kvmfile__0.json

@@ -28,14 +28,14 @@ spec:
     app: keycloak
 ---
 apiVersion: apps/v1
-kind: StatefulSet
+kind: Deployment
 metadata:
   name: keycloak
   labels:
     app: keycloak
 spec:
   replicas: 1
-  podManagementPolicy: Parallel
+  # podManagementPolicy: Parallel
   selector:
     matchLabels:
       app: keycloak
@@ -50,7 +50,7 @@ spec:
           args: ["start-dev"]
           resources:
             requests:
-              cpu: "1000m"
+              cpu: "500m"
               memory: "2000Mi"
             limits:
               cpu: "1000m"
