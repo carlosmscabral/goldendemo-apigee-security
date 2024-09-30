@@ -60,24 +60,34 @@ spec:
               value: "admin"
             - name: KEYCLOAK_ADMIN_PASSWORD
               value: "admin"
+            - name: KC_HOSTNAME
+              value: "keycloak.35.190.9.46.nip.io"
+            - name: KC_HOSTNAME_STRICT
+              value: "true"
+            - name: KC_HOSTNAME_STRICT_HTTPS
+              value: "true"
+            - name: KC_HTTP_ENABLED
+              value: "true"
             - name: KC_PROXY
               value: "edge"
-            - name: DB_VENDOR
-              value: postgres
-            - name: DB_ADDR
-              value: postgres-svc
-            - name: DB_PORT
-              value: "5432"
-            - name: DB_DATABASE
-              value: keycloak
-            - name: DB_SCHEMA
-              value: public
-            - name: DB_USER
+            - name: KC_DB
+              value: "postgres"
+            - name: KC_DB_URL
+              value: "jdbc:postgresql://postgres-svc:5432/keycloak"
+            - name: KC_HEALTH_ENABLED
+              value: "true"
+            # - name: DB_PORT
+            #   value: "5432"
+            # - name: DB_DATABASE
+            #   value: keycloak
+            # - name: DB_SCHEMA
+            #   value: public
+            - name: KC_DB_USERNAME
               valueFrom:
                 secretKeyRef:
                   key: POSTGRES_USER
                   name: postgres-sec
-            - name: DB_PASSWORD
+            - name: KC_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   key: POSTGRES_PASSWORD
@@ -85,6 +95,18 @@ spec:
           ports:
             - name: http
               containerPort: 8080
+          # readinessProbe:
+          #   httpGet:
+          #     path: /health/ready
+          #     port: 8080
+          #   initialDelaySeconds: 90
+          #   periodSeconds: 10
+          # livenessProbe:
+          #   httpGet:
+          #     path: /health/live
+          #     port: 8080
+          #   initialDelaySeconds: 90
+          #   periodSeconds: 10
           readinessProbe:
             httpGet:
               path: /realms/master
